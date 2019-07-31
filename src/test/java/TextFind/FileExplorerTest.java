@@ -14,17 +14,22 @@ public class FileExplorerTest {
     void test_1() {
 
         // GIVEN
-        File file1 = new File("D:\\Kala\\New folder\\k.txt");
-        File file2 = new File("D:\\Kala\\New folder\\New folder\\New Bitmap Image.bmp");
-        File file3 = new File("D:\\Kala\\New folder\\New folder\\New Text Document.txt");
-        File file4 = new File("D:\\Kala\\New folder\\New Text Document (2).txt");
-        File file5 = new File("D:\\Kala\\New folder\\New Text Document.txt");
+        File file1 = new File("C:\\Users\\kaloy\\IdeaProjects\\TextFind\\src\\test\\FileSystem\\Bar.txt");
+        File file2 = new File("C:\\Users\\kaloy\\IdeaProjects\\TextFind\\src\\test\\FileSystem\\BarZip.zip");
+        File file3 = new File("C:\\Users\\kaloy\\IdeaProjects\\TextFind\\src\\test\\FileSystem\\BazFoo.txt");
+        File file4 = new File("C:\\Users\\kaloy\\IdeaProjects\\TextFind\\src\\test\\FileSystem\\BazFooZip.zip");
+        File file5 = new File("C:\\Users\\kaloy\\IdeaProjects\\TextFind\\src\\test\\FileSystem\\Foo.txt");
+        File file6 = new File("C:\\Users\\kaloy\\IdeaProjects\\TextFind\\src\\test\\FileSystem\\FooZip.zip");
+        File file7 = new File("C:\\Users\\kaloy\\IdeaProjects\\TextFind\\src\\test\\FileSystem\\New folder\\Bar1.txt");
+        File file8 = new File("C:\\Users\\kaloy\\IdeaProjects\\TextFind\\src\\test\\FileSystem\\New folder\\BazFoo1.txt");
+        File file9 = new File("C:\\Users\\kaloy\\IdeaProjects\\TextFind\\src\\test\\FileSystem\\New folder\\Foo1.txt");
 
-        List<File> expectedList = List.of(file1, file2, file3, file4, file5);
+
+        List<File> expectedList = List.of(file1, file2, file3, file4, file5, file6, file7, file8, file9);
 
         // WHEN
         FileExplorer explorer = new FileExplorer();
-        explorer.listFiles("/D:/Kala/New folder/");
+        explorer.listFiles("C:\\Users\\kaloy\\IdeaProjects\\TextFind\\src\\test\\FileSystem\\");
 
         // THEN
         Assertions.assertEquals(expectedList, explorer.getFilesList());
