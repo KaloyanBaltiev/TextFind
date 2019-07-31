@@ -14,16 +14,17 @@ public class FileExplorerTest {
     void test_1() {
 
         // GIVEN
-        File file1 = new File("D:\\Kala\\Bala.txt");
-        File file2 = new File("D:\\Kala\\Kala.txt");
-        File file3 = new File("D:\\Kala\\New folder\\k.txt");
-        File file4 = new File("D:\\Kala\\New folder\\New Text Document.txt");
+        File file1 = new File("D:\\Kala\\New folder\\k.txt");
+        File file2 = new File("D:\\Kala\\New folder\\New folder\\New Bitmap Image.bmp");
+        File file3 = new File("D:\\Kala\\New folder\\New folder\\New Text Document.txt");
+        File file4 = new File("D:\\Kala\\New folder\\New Text Document (2).txt");
+        File file5 = new File("D:\\Kala\\New folder\\New Text Document.txt");
 
-        List<File> expectedList = List.of(file1, file2, file3, file4);
+        List<File> expectedList = List.of(file1, file2, file3, file4, file5);
 
         // WHEN
         FileExplorer explorer = new FileExplorer();
-        explorer.listFiles("/D:/Kala/");
+        explorer.listFiles("/D:/Kala/New folder/");
 
         // THEN
         Assertions.assertEquals(expectedList, explorer.getFilesList());

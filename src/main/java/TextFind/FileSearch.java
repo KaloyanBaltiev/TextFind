@@ -109,4 +109,9 @@ class FileSearch {
             System.out.println("File not found!");
         }
     }
+
+    public void unload() {
+        for(File file : filesUnZipped)
+            file.delete();
+    }
 }

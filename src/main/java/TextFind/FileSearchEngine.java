@@ -31,6 +31,9 @@ public class FileSearchEngine {
         for (File file : files) {
             System.out.println(file.getName());
         }
+
+        fileSearch.unload();
+
     }
 
     private static FileSearch parseInput(String input) {
