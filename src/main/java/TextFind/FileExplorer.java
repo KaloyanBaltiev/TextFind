@@ -27,7 +27,7 @@ class FileExplorer {
             if (file.isFile()) {
                 filesList.add(file);
             } else if (file.isDirectory()) {
-                listFiles(file.getAbsolutePath());
+                listFiles(file.getAbsolutePath()); // recursive call
             }
         }
     }

@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 class FileSearch {
 
+    // destination dir for unzipping
     private static final String DEST_DIR_TO_UNZIP = "D:\\unZip\\";
 
     private String path;
@@ -22,22 +23,6 @@ class FileSearch {
         this.filesFound = new ArrayList<>();
         this.filesMatched = new ArrayList<>();
         this.filesUnZipped = new ArrayList<>();
-    }
-
-    private static String getFileExtension(File file) {
-        String extension = "";
-
-        try {
-            if (file != null && file.exists()) {
-                String name = file.getName();
-                extension = name.substring(name.lastIndexOf(".") + 1);
-            }
-        } catch (Exception e) {
-            extension = "";
-        }
-
-        return extension;
-
     }
 
     // find all files in the directory
@@ -56,7 +41,24 @@ class FileSearch {
         return filesMatched;
     }
 
-    // find all files in
+    // find file's extension
+    private static String getFileExtension(File file) {
+        String extension = "";
+
+        try {
+            if (file != null && file.exists()) {
+                String name = file.getName();
+                extension = name.substring(name.lastIndexOf(".") + 1);
+            }
+        } catch (Exception e) {
+            extension = "";
+        }
+
+        return extension;
+
+    }
+
+    // find all files unzipDir
     private void findAllFiles(String unZipPath) {
         FileExplorer files = new FileExplorer();
         try {
@@ -84,14 +86,17 @@ class FileSearch {
 
     // scan zipped files
     private void scanZipFile(File file) {
+
         String filePath = file.getAbsolutePath();
         UnZipper.unzip(filePath, DEST_DIR_TO_UNZIP);
         findAllFiles(DEST_DIR_TO_UNZIP);
+
         for (File unzipFile : filesUnZipped) {
             scanTxtFile(unzipFile);
         }
     }
 
+    // scan text files
     private void scanTxtFile(File file) {
         try {
             Scanner scanner = new Scanner(file);
@@ -110,6 +115,7 @@ class FileSearch {
         }
     }
 
+    // empty unzip directory
     void unload() {
         for(File file : filesUnZipped)
             file.delete();

@@ -32,6 +32,7 @@ public class FileSearchEngine {
             System.out.println(file.getName());
         }
 
+        // empty unzipDir
         fileSearch.unload();
 
     }

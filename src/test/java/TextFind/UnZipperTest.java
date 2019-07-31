@@ -5,14 +5,14 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 
-public class UnZipperTest {
+class UnZipperTest {
 
     @Test
     void test_unzip_file_success() {
         // GIVEN
-        String filePath ="D:\\Kala\\Baz.zip";
+        String filePath ="C:\\Users\\kaloy\\IdeaProjects\\TextFind\\src\\test\\FileSystem\\BazFooZip.zip";
         String destination = "D:\\New folder\\";
-        File expected = new File ("D:\\New folder\\Baz.txt");
+        File expected = new File ("D:\\New folder\\BazFooZip.txt");
 
         // WHEN
         UnZipper.unzip(filePath, destination);
