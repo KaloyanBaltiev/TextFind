@@ -30,7 +30,7 @@ class FileSearch {
         try {
             if (file != null && file.exists()) {
                 String name = file.getName();
-                extension = name.substring(name.lastIndexOf("."));
+                extension = name.substring(name.lastIndexOf(".") + 1);
             }
         } catch (Exception e) {
             extension = "";
@@ -74,9 +74,9 @@ class FileSearch {
         for (File file : filesFound) {
 
             String extension = getFileExtension(file);
-            if (extension.equals(".txt")) {
+            if (extension.equals("txt")) {
                 scanTxtFile(file);
-            } else if (extension.equals(".zip")) {
+            } else if (extension.equals("zip")) {
                 scanZipFile(file);
             }
         }
@@ -110,7 +110,7 @@ class FileSearch {
         }
     }
 
-    public void unload() {
+    void unload() {
         for(File file : filesUnZipped)
             file.delete();
     }

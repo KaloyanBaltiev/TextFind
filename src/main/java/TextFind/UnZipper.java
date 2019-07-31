@@ -45,6 +45,5 @@ class UnZipper {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }
