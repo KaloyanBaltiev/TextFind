@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 
-public class Main {
+public class FileSearchEngine {
     public static void main(String[] args) {
 
         // get user input
@@ -15,17 +15,17 @@ public class Main {
         String input = scanner.nextLine();
 
         // parse input
-        TextFinder textFinder = parseInput(input);
+        FileSearch fileSearch = parseInput(input);
 
         // search the path for files matching text inside;
-        textFinder.findAllFiles();
-        textFinder.searchFilesForText();
+        fileSearch.findAllFiles();
+        fileSearch.searchFilesForText();
 
         // get all matching files
-        List<File> files = textFinder.getFilesMatched();
+        List<File> files = fileSearch.getFilesMatched();
 
         // sort by size
-        files.sort(Comparator.comparing(File::getTotalSpace));
+        files.sort(Comparator.comparing(File::length));
 
         // print
         for (File file : files) {
@@ -33,7 +33,7 @@ public class Main {
         }
     }
 
-    private static TextFinder parseInput(String input) {
+    private static FileSearch parseInput(String input) {
 
         // split path and text to search
         String[] splitInput = input.split("\"");
@@ -41,11 +41,11 @@ public class Main {
         String text = "";
 
         if (splitInput.length < 2) {
-            return new TextFinder(path, text);
+            return new FileSearch(path, text);
         } else {
             path = splitInput[0].trim();
             text = splitInput[1].trim();
-            return new TextFinder(path, text);
+            return new FileSearch(path, text);
         }
     }
 }

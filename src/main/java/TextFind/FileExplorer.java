@@ -4,11 +4,11 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FileExplorer {
+class FileExplorer {
 
     private List<File> filesList;
 
-    public FileExplorer() {
+    FileExplorer() {
         this.filesList = new ArrayList<>();
     }
 
@@ -32,7 +32,7 @@ public class FileExplorer {
         }
     }
 
-    public List<File> getFilesList() {
+    List<File> getFilesList() {
         return filesList;
     }
 }
