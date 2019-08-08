@@ -14,13 +14,14 @@ class FileSearchTest {
         String path = "C:\\Users\\kaloy\\IdeaProjects\\TextFind\\src\\test\\FileSystem\\";
         String word ="Foo";
 
-        File file1 = new File("C:\\Users\\kaloy\\IdeaProjects\\TextFind\\src\\test\\FileSystem\\BazFoo.txt");
-        File file2 = new File("C:\\Users\\kaloy\\IdeaProjects\\TextFind\\src\\test\\FileSystem\\Foo.txt");
-        File file3 = new File("D:\\unZip\\FooZip.txt");
-        File file4 = new File("C:\\Users\\kaloy\\IdeaProjects\\TextFind\\src\\test\\FileSystem\\New folder\\BazFoo1.txt");
-        File file5 = new File("C:\\Users\\kaloy\\IdeaProjects\\TextFind\\src\\test\\FileSystem\\New folder\\Foo1.txt");
+        File file1 = new File("D:\\unZip\\BarZip\\FooInBar.txt");
+        File file2 = new File("C:\\Users\\kaloy\\IdeaProjects\\TextFind\\src\\test\\FileSystem\\BazFoo.txt");
+        File file3 = new File("C:\\Users\\kaloy\\IdeaProjects\\TextFind\\src\\test\\FileSystem\\Foo.txt");
+        File file4 = new File("D:\\unZip\\FooZip.txt");
+        File file5 = new File("C:\\Users\\kaloy\\IdeaProjects\\TextFind\\src\\test\\FileSystem\\New folder\\BazFoo1.txt");
+        File file6 = new File("C:\\Users\\kaloy\\IdeaProjects\\TextFind\\src\\test\\FileSystem\\New folder\\Foo1.txt");
 
-        List<File> expectedList = List.of(file1, file2, file3, file4, file5);
+        List<File> expectedList = List.of(file1, file2, file3, file4, file5, file6);
 
         // WHEN
         FileSearch search = new FileSearch(path, word);

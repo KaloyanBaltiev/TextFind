@@ -31,10 +31,6 @@ public class FileSearchEngine {
         for (File file : files) {
             System.out.println(file.getName());
         }
-
-        // empty unzipDir
-        fileSearch.unload();
-
     }
 
     private static FileSearch parseInput(String input) {

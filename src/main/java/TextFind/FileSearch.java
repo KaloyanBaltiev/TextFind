@@ -92,8 +92,11 @@ class FileSearch {
         findAllFiles(DEST_DIR_TO_UNZIP);
 
         for (File unzipFile : filesUnZipped) {
-            scanTxtFile(unzipFile);
+            if(unzipFile.exists()) {
+                scanTxtFile(unzipFile);
+            }
         }
+        unload();
     }
 
     // scan text files
