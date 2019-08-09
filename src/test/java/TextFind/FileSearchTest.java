@@ -31,6 +31,5 @@ class FileSearchTest {
 
         // THEN
         Assertions.assertEquals(expectedList, actual);
-        search.unload();
     }
 }
